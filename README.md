@@ -8,7 +8,7 @@ A Docker image that you can schedule on HSDP IronIO to perform PostgreSQL backup
 
 # Usage
 
-## Prequisites
+## Prerequisites
 - IronIO CLI
 - Siderite CLI
 - Provisioned: one or more PostgreSQL RDS instances you want to backup
