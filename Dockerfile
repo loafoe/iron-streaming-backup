@@ -2,7 +2,7 @@ FROM golang:1.16.0-alpine3.13 AS builder
 RUN apk add --no-cache git openssh gcc musl-dev
 RUN go get github.com/rlmcpherson/s3gof3r/gof3r
 
-FROM loafoe/siderite:latest AS siderite
+FROM philipslabs/siderite:latest AS siderite
 
 FROM alpine:latest
 RUN apk add --no-cache git openssh openssl bash postgresql-client

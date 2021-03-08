@@ -89,7 +89,7 @@ cat ~/.iron.json |jq -r .cluster_info[0].cluster_id
 Register the `iron-streaming-backup` Docker image in IronIO. You only need to do this once or after updating or publishing the Docker image in this repository
 
 ```shell
-iron register loafoe/iron-streaming-backup:latest
+iron register philipslabs/iron-streaming-backup:latest
 ```
 
 Finally, you can schedule the task. In the below example the backup task will run once every day
@@ -98,7 +98,7 @@ Finally, you can schedule the task. In the below example the backup task will ru
 iron worker schedule \
 	-cluster 56someclusteridhere34554 \
 	-run-every 86400 \
-	-payload-file payload.enc loafoe/iron-streaming-backup
+	-payload-file payload.enc philipslabs/iron-streaming-backup
 ```
 
 # Bucket lifecycle policy
