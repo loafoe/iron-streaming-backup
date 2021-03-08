@@ -60,7 +60,7 @@ The pass file contains the key (password) that will be used to encrypt the datab
 
 ```shell
 echo -n 'MySecretPassword'|base64
-TXlTZWNyZXRQYXNzd29yZAo=
+TXlTZWNyZXRQYXNzd29yZA==
 ```
 
 ### AWS_ACCESS_KEY_ID
