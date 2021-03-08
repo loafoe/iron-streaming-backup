@@ -59,7 +59,7 @@ cG9zdGdyZXMtZGIuZGVmc2ZzYS51cy1lYXN0LTEucmRzLmFtYXpvbmF3cy5jb206NTQzMjpoc2RwX3Bn
 The pass file contains the key (password) that will be used to encrypt the database backups using AES-256
 
 ```shell
-echo 'MySecretPassword'|base64
+echo -n 'MySecretPassword'|base64
 TXlTZWNyZXRQYXNzd29yZAo=
 ```
 
@@ -121,6 +121,13 @@ It is advised to set a S3 Bucket lifecycle policy. A good practice is to move yo
     ]
   }
 ]
+```
+
+# Retrieving and decrypting a backup
+- Copy the `.gz.aes` file from the bucket back to your restore system
+- Decrypting the file, assuming your password is stored in the file `${password_file}`:
+```shell
+openssl enc -in backup_file.gz.aes -aes-256-cbc -d -pass file:${password_file} |gzip -d > pg_dump_file.sql
 ```
 
 # License
