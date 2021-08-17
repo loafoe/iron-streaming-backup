@@ -1,4 +1,4 @@
-FROM golang:1.17rc1-alpine3.13 AS builder
+FROM golang:1.17.0-alpine3.13 AS builder
 RUN apk add --no-cache git openssh gcc musl-dev
 RUN go get github.com/rlmcpherson/s3gof3r/gof3r
 
